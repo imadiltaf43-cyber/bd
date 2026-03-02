@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hira 💖</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background: linear-gradient(135deg, #ffd6ec, #ffe9f5, #fff0f8);
+        overflow: hidden;
+        text-align: center;
+    }
+
+    h1 {
+        margin-top: 80px;
+        font-size: 50px;
+        color: #ff4da6;
+        animation: bounce 2s infinite;
+    }
+
+    .message {
+        margin: 20px auto;
+        width: 80%;
+        max-width: 600px;
+        font-size: 20px;
+        color: #444;
+        background: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    .love {
+        font-size: 28px;
+        color: #ff1493;
+        margin-top: 15px;
+        animation: pulse 1.5s infinite;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        background: #ff66b2;
+        color: white;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff1493;
+        transform: scale(1.1);
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        font-size: 20px;
+        color: #ff69b4;
+        animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(100vh) scale(0.5);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-10vh) scale(1.2);
+            opacity: 0;
+        }
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Balloon */
+    .balloon {
+        position: absolute;
+        bottom: -150px;
+        width: 80px;
+        height: 100px;
+        background: pink;
+        border-radius: 50%;
+        animation: rise 8s linear infinite;
+    }
+
+    .balloon:after {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 80px;
+        background: #555;
+        left: 50%;
+        top: 100px;
+    }
+
+    @keyframes rise {
+        0% { bottom: -150px; }
+        100% { bottom: 110%; }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday Hira 🎂</h1>
+
+<div class="message">
+    Happy birthday to mah baby girl💞💅🏻 finally it's the day on which my phone passcode make some sense.
+Bs Allah apko hamesha muskurata rakhe aur hamesha mere dil ke qareeb rake🥹🫶🏻 arey ma'am sab the way u being possessive towards me like how could i explain u the feelings jb ap meko stalk krti ho🫠
+Khair i just want u to be happy and mine cuz mei apko kisi aur ko nhi de skta🥺 kisi aur na agr acha treat nhi kia apko tu 💔 isliye plz just be mine.
+Happy this amazing beautiful birthday to u meri jan❤️
+Regards your own🫀
+</div>
+
+<div class="love">I Love You So Much 💖</div>
+
+<button onclick="celebrate()">Click for Surprise 🎁</button>
+
+<script>
+    // Floating Hearts Generator
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "💖";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+
+    // Balloons
+    for (let i = 0; i < 5; i++) {
+        let balloon = document.createElement("div");
+        balloon.classList.add("balloon");
+        balloon.style.left = Math.random() * 100 + "vw";
+        balloon.style.background = ["#ff99cc","#ff66b2","#ff85c1","#ffc0cb","#ff4da6"][Math.floor(Math.random()*5)];
+        balloon.style.animationDuration = (Math.random() * 5 + 5) + "s";
+        document.body.appendChild(balloon);
+    }
+
+    // Surprise Alert
+    function celebrate() {
+        alert("🎉 Happy Birthday My Princess Hira 💖\nYou are my cutest blessing! 🌸✨");
+    }
+</script>
+
+</body>
+</html>
